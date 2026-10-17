@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Camilo | Portafolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Fondo de partículas animadas */
+    #canvas-particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Navegación */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(13, 17, 23, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      border-bottom: 1px solid #21262d;
+    }
+
+    nav .logo {
+      font-weight: bold;
+      color: #58a6ff;
+      font-size: 1.2rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #8b949e;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    /* Secciones */
+    section {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      padding: 6rem 2rem 2rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #f0f6fc;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #8b949e;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      background-color: #21262d;
+      color: #58a6ff;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #30363d;
+      border-color: #58a6ff;
+      box-shadow: 0 0 12px rgba(88, 166, 255, 0.3);
+    }
+
+    /* Titulos de Sección */
+    h2 {
+      font-size: 2rem;
+      color: #f0f6fc;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #21262d;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Grilla de Proyectos */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #58a6ff;
+    }
+
+    .card h3 {
+      color: #58a6ff;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: #8b949e;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      background: #21262d;
+      color: #79c0ff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #21262d;
+      color: #8b949e;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="canvas-particles"></canvas>
+
+  <nav>
+    <div class="logo">JC</div>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section id="inicio" class="hero">
+    <h1>Hola, soy Juan Camilo</h1>
+    <p>Estudiante de Tecnología en Desarrollo de Software en la Universidad del Valle. Enfocado en arquitectura de datos, lógica de programación y desarrollo web.</p>
+    <a href="#proyectos" class="btn">Ver proyectos</a>
+  </section>
+
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>Me apasiona el análisis y diseño de soluciones de software estructuradas. Durante mi formación académica he liderado roles de arquitectura de datos y desarrollo de lógica en proyectos grupales e individuales, aplicando buenas prácticas de documentación, modelado de bases de datos y control de versiones con Git y GitHub.</p>
+  </section>
+
+  <section id="proyectos">
+    <h2>Proyectos Destacados</h2>
+    <div class="grid">
+      
+      <div class="card">
+        <h3>Basuras al día</h3>
+        <p>Aplicación de impacto social para la gestión de rutas y horarios de recolección de residuos en Buenaventura. Diseñé el flujo de datos, la estructura de interfaz y la estrategia de contenido.</p>
+        <div class="tags">
+          <span class="tag">Arquitectura de Datos</span>
+          <span class="tag">Diseño UI/UX</span>
+          <span class="tag">Estrategia de Contenido</span>
+        </div>
+        <a href="https://github.com" target="_blank" class="btn" style="font-size:0.85rem; padding:0.4rem 0.8rem;">Ver Repositorio</a>
+      </div>
+
+      <div class="card">
+        <h3>requiem.py</h3>
+        <p>Juego interactivo de texto desarrollado en Python enfocado en gestión de estados, estructuras de datos avanzadas, navegación por ubicaciones y sistema de inventario interactivo.</p>
+        <div class="tags">
+          <span class="tag">Python 3</span>
+          <span class="tag">Estructuras de Datos</span>
+          <span class="tag">Lógica POO</span>
+        </div>
+        <a href="https://github.com" target="_blank" class="btn" style="font-size:0.85rem; padding:0.4rem 0.8rem;">Ver Repositorio</a>
+      </div>
+
+      <div class="card">
+        <h3>Sistema de Transporte & Pasajes</h3>
+        <p>Modelado relacional completo para un sistema de venta de pasajes marítimos. Incluye diseño Entidad-Relación, diccionario de datos, normalización y consultas SQL.</p>
+        <div class="tags">
+          <span class="tag">Bases de Datos</span>
+          <span class="tag">Modelo ER</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Dia</span>
+        </div>
+        <a href="https://github.com" target="_blank" class="btn" style="font-size:0.85rem; padding:0.4rem 0.8rem;">Ver Documentación</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Si deseas conocer más sobre mi trabajo o colaborar en un proyecto, puedes contactarme a través de:</p>
+    <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+      <a href="https://github.com" target="_blank" class="btn">GitHub</a>
+      <a href="mailto:tu-correo@correounivalle.edu.co" class="btn">Correo Electrónico</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Juan Camilo Bolaños — Portafolio Profesional</p>
+  </footer>
+
+  <!-- Script para la animación de fondo espacial (partículas) -->
+  <script>
+    const canvas = document.getElementById('canvas-particles');
+    const ctx = canvas.getContext('2d');
+
+    let particlesArray = [];
+    const numberOfParticles = 75;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.4;
+        this.speedY = (Math.random() - 0.5) * 0.4;
+        this.opacity = Math.random() * 0.7 + 0.3;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+      draw() {
+        ctx.fillStyle = `rgba(201, 209, 219, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function init() {
+      particlesArray = [];
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+  </script>
+</body>
+</html>
