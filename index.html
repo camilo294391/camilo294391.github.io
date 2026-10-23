@@ -213,6 +213,98 @@
       font-size: 0.8rem;
     }
 
+    /* TARJETA DE CONTACTO ESTILO "HABLEMOS" */
+    .contact-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 20px;
+      padding: 3.5rem 3rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .contact-card {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+      }
+    }
+
+    .contact-card .contact-tag {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ff7b72;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card h2 {
+      font-size: 3.2rem;
+      color: #f0f6fc;
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .contact-card p {
+      color: #8b949e;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-card .links-secondary {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .contact-card .links-secondary a {
+      color: #f0f6fc;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    .contact-card .links-secondary a:hover {
+      color: #ff7b72;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .btn-pill {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.9rem 1.5rem;
+      background-color: transparent;
+      color: #f0f6fc;
+      border: 1px solid #30363d;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+
+    .btn-pill:hover {
+      background-color: #21262d;
+      border-color: #ff7b72;
+      color: #ff7b72;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 123, 114, 0.15);
+    }
+
     footer {
       position: relative;
       z-index: 1;
@@ -221,6 +313,17 @@
       border-top: 1px solid #21262d;
       color: #8b949e;
       font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      footer {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
     }
   </style>
 </head>
@@ -274,18 +377,28 @@
     </div>
   </section>
 
+  <!-- SECCIÓN DE CONTACTO EN TARJETA ELEGANTE -->
   <section id="contacto">
-    <h2>Contacto 📬</h2>
-    <p>Puedes contactarme o revisar mis trabajos académicos y perfil profesional en:</p>
-    <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-      <a href="https://github.com/camilo294391" target="_blank" class="btn">GitHub</a>
-      <a href="https://www.linkedin.com/in/juan-camilo-bola%C3%B1os-salcedo-523441192?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="btn">LinkedIn</a>
-      <a href="mailto:tu-correo@correounivalle.edu.co" class="btn">Correo Electrónico</a>
+    <div class="contact-card">
+      <div>
+        <div class="contact-tag">Contacto</div>
+        <h2>Hablemos.</h2>
+        <p>Si tienes un proyecto en el que pueda aportar, una oportunidad académica o quieres conectar sobre desarrollo de software, escríbeme. Siempre dispuesto a aprender y colaborar.</p>
+        <div class="links-secondary">
+          <a href="https://github.com/camilo294391" target="_blank">GITHUB ↗</a>
+        </div>
+      </div>
+
+      <div class="contact-buttons">
+        <a href="mailto:tu-correo@correounivalle.edu.co" class="btn-pill">Envíame un correo ↗</a>
+        <a href="https://www.linkedin.com/in/juan-camilo-bola%C3%B1os-salcedo-523441192?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="btn-pill">Conectemos en LinkedIn ↗</a>
+      </div>
     </div>
   </section>
 
   <footer>
     <p>&copy; 2026 Juan Camilo Bolaños — Portafolio Profesional</p>
+    <p><a href="#inicio" style="color: #8b949e; text-decoration: none;">VOLVER ARRIBA ↑</a></p>
   </footer>
 
   <script>
