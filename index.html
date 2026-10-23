@@ -21,6 +21,7 @@
       color: #c9d1d9;
       line-height: 1.6;
       overflow-x: hidden;
+      cursor: crosshair; /* DETALLE 3: Cursor de mira técnico */
     }
 
     /* Fondo de partículas animadas */
@@ -139,11 +140,18 @@
       50% { box-shadow: 0 0 20px rgba(255, 60, 80, 0.5); }
     }
 
+    /* DETALLE 1: Título con efecto Glitch sutil en hover */
     .hero h1 {
       font-size: 3.2rem;
       color: #f0f6fc;
       margin-bottom: 0.5rem;
       text-shadow: 0 0 25px rgba(180, 25, 40, 0.5);
+      transition: text-shadow 0.3s, transform 0.1s;
+    }
+
+    .hero h1:hover {
+      text-shadow: -2px 0 #ff7b72, 2px 0 #161b22, 0 0 25px rgba(180, 25, 40, 0.8);
+      transform: skewX(-1.5deg);
     }
 
     .hero .subtitle {
@@ -160,7 +168,7 @@
       margin-bottom: 2rem;
     }
 
-    /* Estilo General de Botones e Interacciones */
+    /* Estilo General de Botones */
     .btn, .btn-pill {
       position: relative;
       overflow: hidden;
@@ -196,7 +204,7 @@
       padding-bottom: 0.5rem;
     }
 
-    /* Lista por puntos en Sobre Mí con Hover Animado */
+    /* Lista por puntos en Sobre Mí */
     .about-list {
       list-style: none;
       display: flex;
@@ -243,6 +251,31 @@
       box-shadow: 0 8px 25px rgba(180, 25, 40, 0.25);
     }
 
+    /* DETALLE 2: Estilo de indicador terminal */
+    .status-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.75rem;
+      color: #ff7b72;
+      margin-bottom: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #ff7b72;
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
     .card h3 {
       color: #58a6ff;
       margin-bottom: 0.5rem;
@@ -274,13 +307,14 @@
       transform: scale(1.05);
     }
 
-    /* TARJETA DE CONTACTO ELEGANTE */
+    /* DETALLE 4: Tarjeta de Contacto con borde superior parpadeante */
     .contact-card {
       background: #161b22;
       border: 1px solid #30363d;
+      border-top: 2px solid rgba(255, 123, 114, 0.7);
       border-radius: 20px;
       padding: 3.5rem 3rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 -5px 20px rgba(180, 25, 40, 0.15), 0 10px 30px rgba(0, 0, 0, 0.4);
       display: grid;
       grid-template-columns: 1.2fr 1fr;
       gap: 2.5rem;
@@ -289,8 +323,9 @@
     }
 
     .contact-card:hover {
-      border-color: rgba(255, 123, 114, 0.4);
-      box-shadow: 0 12px 35px rgba(180, 25, 40, 0.2);
+      border-color: rgba(255, 123, 114, 0.5);
+      border-top-color: #ff7b72;
+      box-shadow: 0 -5px 25px rgba(255, 60, 80, 0.25), 0 12px 35px rgba(0, 0, 0, 0.5);
     }
 
     @media (max-width: 768px) {
@@ -374,7 +409,7 @@
       box-shadow: 0 4px 15px rgba(255, 123, 114, 0.2);
     }
 
-    /* EFECTO RIPPLE EN CLIC DE BOTONES */
+    /* Efecto Ripple en clics de botones */
     .ripple {
       position: absolute;
       border-radius: 50%;
@@ -450,6 +485,10 @@
     <div class="grid">
 
       <div class="card">
+        <!-- DETALLE 2: Indicador tipo terminal en requiem.py -->
+        <div class="status-indicator">
+          <span class="status-dot"></span> SYSTEM_ONLINE // ARCHIVE_01
+        </div>
         <h3>requiem.py 🕹️</h3>
         <p>Juego interactivo de texto desarrollado en Python enfocado en gestión de estados, estructuras de datos, navegación por ubicaciones y un sistema de inventario interactivo.</p>
         <div class="tags">
@@ -463,7 +502,7 @@
     </div>
   </section>
 
-  <!-- SECCIÓN DE CONTACTO ORIGINAL -->
+  <!-- SECCIÓN DE CONTACTO -->
   <section id="contacto">
     <div class="contact-card">
       <div>
