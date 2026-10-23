@@ -89,14 +89,21 @@
     .hero h1 {
       font-size: 3rem;
       color: #f0f6fc;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 20px rgba(180, 25, 40, 0.4);
+    }
+
+    .hero .subtitle {
+      font-size: 1.3rem;
+      color: #b32638;
+      font-weight: 600;
       margin-bottom: 1rem;
-      text-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
     }
 
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       color: #8b949e;
-      max-width: 600px;
+      max-width: 650px;
       margin-bottom: 2rem;
     }
 
@@ -118,13 +125,30 @@
       box-shadow: 0 0 12px rgba(88, 166, 255, 0.3);
     }
 
-    /* Titulos de Sección */
+    /* Títulos de Sección */
     h2 {
       font-size: 2rem;
       color: #f0f6fc;
       margin-bottom: 1.5rem;
       border-bottom: 1px solid #21262d;
       padding-bottom: 0.5rem;
+    }
+
+    /* Lista por puntos en Sobre Mí */
+    .about-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .about-list li {
+      background: #161b22;
+      border: 1px solid #30363d;
+      padding: 0.9rem 1.2rem;
+      border-radius: 6px;
+      color: #c9d1d9;
+      font-size: 1rem;
     }
 
     /* Grilla de Proyectos */
@@ -200,14 +224,20 @@
   </nav>
 
   <section id="inicio" class="hero">
-    <h1>Hola, soy Juan Camilo</h1>
-    <p>Estudiante de Tecnología en Desarrollo de Software en la Universidad del Valle. Enfocado en lógica de programación, algoritmos y desarrollo de software.</p>
-    <a href="#proyectos" class="btn">Ver proyectos</a>
+    <h1>Bienvenido al Laboratorio 🧪</h1>
+    <div class="subtitle">Juan Camilo Bolaños — Desarrollador de Software</div>
+    <p>Estudiante de Tecnología en Desarrollo de Software en la Universidad del Valle. Enfocado en la lógica de programación, arquitectura de datos y desarrollo estructurado.</p>
+    <a href="#proyectos" class="btn">Explorar proyectos</a>
   </section>
 
   <section id="sobre-mi">
     <h2>Sobre mí</h2>
-    <p>Me apasiona la lógica de programación y el desarrollo de software estructurado. Durante mi formación académica he trabajado en la construcción de proyectos en Python, manejo de estructuras de datos, gestión de estados y control de versiones con Git y GitHub.</p>
+    <ul class="about-list">
+      <li>💻 <strong>Apasionado por la lógica:</strong> Enfoque continuo en la programación estructurada y resolución eficiente de problemas.</li>
+      <li>🐍 <strong>Desarrollo en Python:</strong> Experiencia práctica en proyectos interactivos, manejo de estados y estructuras de datos.</li>
+      <li>🗄️ <strong>Bases de Datos & Arquitectura:</strong> Diseño de modelos Entidad-Relación y diccionarios de datos estructurados.</li>
+      <li>🛠️ <strong>Herramientas & Colaboración:</strong> Control de versiones con Git/GitHub y trabajo en equipo para proyectos académicos.</li>
+    </ul>
   </section>
 
   <section id="proyectos">
@@ -215,7 +245,7 @@
     <div class="grid">
 
       <div class="card">
-        <h3>requiem.py</h3>
+        <h3>requiem.py 🕹️</h3>
         <p>Juego interactivo de texto desarrollado en Python enfocado en gestión de estados, estructuras de datos, navegación por ubicaciones y un sistema de inventario interactivo.</p>
         <div class="tags">
           <span class="tag">Python 3</span>
@@ -229,8 +259,8 @@
   </section>
 
   <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Puedes contactarme o ver más de mis trabajos académicos y perfil profesional en:</p>
+    <h2>Contacto 📬</h2>
+    <p>Puedes contactarme o revisar mis trabajos académicos y perfil profesional en:</p>
     <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
       <a href="https://github.com/camilo294391" target="_blank" class="btn">GitHub</a>
       <a href="https://www.linkedin.com/in/juan-camilo-bola%C3%B1os-salcedo-523441192?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="btn">LinkedIn</a>
