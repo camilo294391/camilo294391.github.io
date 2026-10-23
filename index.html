@@ -51,7 +51,7 @@
       transition: all 0.3s ease;
     }
 
-    /* Logo Combinado */
+    /* Logo Combinado con SVG exacto del Operator */
     nav .logo {
       display: flex;
       align-items: center;
@@ -68,12 +68,16 @@
 
     nav .logo .brand-name {
       color: #f0f6fc;
+      display: inline-flex;
+      align-items: center;
     }
 
-    nav .logo .operator-sym {
+    nav .logo .operator-svg {
+      width: 1.05rem;
+      height: 1.05rem;
       color: #ff7b72;
-      margin: 0 2px;
-      font-weight: 900;
+      margin: 0 3px;
+      vertical-align: middle;
     }
 
     nav ul {
@@ -222,7 +226,7 @@
       padding-bottom: 0.5rem;
     }
 
-    /* MÓDULO OPCIÓN 3: Sobre Mí + Trayectoria Académica */
+    /* Sobre Mí & Trayectoria Académica */
     .about-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -267,7 +271,7 @@
       transform: translateX(5px);
     }
 
-    /* MÓDULO OPCIÓN 1: Habilidades & Stack Tecnológico */
+    /* Habilidades & Stack Tecnológico */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -569,7 +573,14 @@
     <div class="logo">
       <span class="status-dot"></span>
       <span class="prompt">&gt;_</span>
-      <span class="brand-name">JC<span class="operator-sym">⊕</span>DEV</span>
+      <span class="brand-name">
+        JC
+        <svg class="operator-svg" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        DEV
+      </span>
     </div>
     <ul>
       <li><a href="#inicio">Inicio</a></li>
@@ -613,7 +624,7 @@
     </div>
   </section>
 
-  <!-- NUEVA SECCIÓN: HABILIDADES Y STACK TECNOLÓGICO -->
+  <!-- SECCIÓN: HABILIDADES Y STACK TECNOLÓGICO -->
   <section id="habilidades">
     <h2>Habilidades & Stack Tecnológico</h2>
     <div class="skills-grid">
@@ -716,7 +727,6 @@
 
     let particlesArray = [];
     let explosionParticles = [];
-    // OPCIÓN 2: Subimos la densidad a 90 partículas para cubrir zonas vacías
     const numberOfParticles = 90;
 
     // Posición del ratón
@@ -782,7 +792,7 @@
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Partículas normales del fondo
+    // Partículas normales del fondo (Símbolo Operator: Círculo con 'X' inclinada)
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
